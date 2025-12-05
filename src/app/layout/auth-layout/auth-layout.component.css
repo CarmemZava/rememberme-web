@@ -1,0 +1,32 @@
+main {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: center;
+    height: 100%;
+}
+
+main > section {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    height: 100%;
+}
+
+.main-section {
+    flex-grow: 0.25;
+    background-color: var(--blue-bg);
+
+}
+
+.form-section {
+    flex-grow: 1;
+    background-color: var(--white-bg);
+}
+
+h1{
+    font-size: 52px;
+    font-weight: 600;
+    color: var(--secondary-color);
+}
