@@ -1,0 +1,7 @@
+input{
+    border: none;
+    border-radius: 20px;
+    background-color: var(--grey-bg);
+    font-size: 20px;
+    color: var(--text-input);
+}
