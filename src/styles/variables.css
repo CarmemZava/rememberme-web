@@ -4,6 +4,6 @@
     --text-color: #7C838A;
     --white-bg: #FCFEFF;
     --blue-bg: #E6F3FF;
-    --grey-bg:#B0BAC3;
+    --grey-bg:rgba(176, 186, 195, 0.4);
     --text-input:#000000;
 }

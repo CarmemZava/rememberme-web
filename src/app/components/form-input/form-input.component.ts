@@ -15,5 +15,5 @@ export class FormInputComponent {
   @Input() type: InputType = "text";
   @Input() formName: string = "";
   @Input() placeholder: string = "";
-
+  @Input() label: string = "";
 }

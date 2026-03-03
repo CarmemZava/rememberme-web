@@ -1,0 +1,16 @@
+form {
+    width: 100%;
+}
+
+button {
+    background-color: var(--primary-color);
+    display: grid;
+    place-items: center;
+    margin: auto;
+    width: 340px;
+    height: 60px;
+    font-size: 26px;
+    font-weight: 500;
+    border: none;
+    border-radius: 10px;
+}

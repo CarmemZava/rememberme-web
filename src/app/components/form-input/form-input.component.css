@@ -1,7 +1,21 @@
-input{
+.input-wrapper{
+    display: flex;
+    flex-direction: column;
+    text-align: start;
+    width: 100%;
+    font-size: 20px;
+    font-weight: 500;
+    color: var(--text-color);
+    margin-bottom: 50px;
+}
+
+.input-wrapper input{
     border: none;
+    font-size: inherit;
+    font-weight: 400;
     border-radius: 20px;
     background-color: var(--grey-bg);
-    font-size: 20px;
     color: var(--text-input);
+    width: 100%;
+    padding: 10px 40px;
 }

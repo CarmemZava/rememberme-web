@@ -1,5 +1,23 @@
 <app-auth-layout>
     <form [formGroup]="registerForm">
-        <app-form-input></app-form-input>
+        <app-form-input
+        formName="name"
+        type="text"
+        label="Full Name"
+        placeholder="Enter your Full Name here"
+        ></app-form-input>
+        <app-form-input
+        formName="email"
+        type="email"
+        label="Email"
+        placeholder="Enter your Email here"
+        ></app-form-input>
+        <app-form-input
+        formName="password"
+        type="password"
+        label="Password"
+        placeholder="Enter your Password here"
+        ></app-form-input>
+        <button>Create Account</button>
     </form>
 </app-auth-layout>
