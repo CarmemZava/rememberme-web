@@ -1,16 +1,41 @@
 form {
     width: 100%;
+    max-width: 600px;
+    
 }
 
-button {
-    background-color: var(--primary-color);
+.register-section {
     display: grid;
     place-items: center;
+}
+
+.button-auth {
+    display: block;
     margin: auto;
-    width: 340px;
-    height: 60px;
-    font-size: 26px;
+    background-color: var(--primary-color);
+    padding: 10px 50px;
+    font-size: 22px;
     font-weight: 500;
+    line-height: 39px;
     border: none;
     border-radius: 10px;
+}
+
+.login-option {
+    text-align: center;
+    font-size: 16px;
+}
+
+.login-or {
+    display: block;
+    color: var(--text-span);
+    margin: 24px 0px;
+}
+
+.login-option-text {
+    color: var(--text-color);
+}
+
+.login-option-here {
+    color: var(--text-login);
 }
