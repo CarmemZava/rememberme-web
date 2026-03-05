@@ -4,6 +4,7 @@ main {
     align-items: center;
     justify-content: center;
     height: 100vh;
+    overflow: hidden;
 }
 
 main>section {
@@ -14,28 +15,59 @@ main>section {
 }
 
 .main-section {
-    width: 45%;
+    flex: 1;
     background-color: var(--blue-bg);
-    height: 100vh;
     overflow: hidden;
 }
 
 main>section img {
-    max-height: 100vh;
-    max-width: 100%;
+    max-height: 100%;
+    max-width: 82%;
     object-fit: contain;
 }
 
 .form-section {
-    width: 55%;
-    height: 100%;
-    padding: 5rem;
+    flex: 1.2;
     background-color: var(--white-bg);
+    height: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.form-container {
+    width: 100%;
+    max-width: 600px;
+    padding: clamp(2rem, 4vw, 5rem);
 }
 
 h1 {
-    font-size: 50px;
+    font-size: clamp(32px, 4vw, 50px);
+    /* responsiveness */
     font-weight: 600;
     line-height: 78px;
     color: var(--secondary-color);
+    margin-bottom: 25px;
+}
+
+
+
+
+
+
+
+
+
+@media (max-width: 900px) {
+    main {
+        flex-direction: column;
+    }
+
+    .main-section {
+        display: none;
+    }
+
+    .form-section {
+        width: 100%;
+    }
 }

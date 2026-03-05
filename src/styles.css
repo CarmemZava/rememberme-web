@@ -15,3 +15,14 @@ body {
   width: 100%;
   margin: 0 auto;
 }
+
+img {
+  max-width: 100%;
+  display: block;
+}
+
+/* changing styles of the automatic autofill for inputs */
+input:-webkit-autofill {
+  -webkit-box-shadow: 0 0 0 1000px var(--grey-bg) inset;
+  -webkit-text-fill-color: var(--text-input);
+}

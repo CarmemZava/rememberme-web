@@ -2,6 +2,7 @@ import { Component } from '@angular/core';
 import { AuthLayoutComponent } from '../../layout/auth-layout/auth-layout.component';
 import { FormControl, FormGroup, ReactiveFormsModule, Validators } from '@angular/forms';
 import { FormInputComponent } from '../../components/form-input/form-input.component';
+import { ButtonComponent } from '../../components/button/button.component';
 
 @Component({
   selector: 'app-register',
@@ -9,7 +10,8 @@ import { FormInputComponent } from '../../components/form-input/form-input.compo
   imports: [
     AuthLayoutComponent,
     ReactiveFormsModule,
-    FormInputComponent
+    FormInputComponent,
+    ButtonComponent
   ],
   templateUrl: './register.component.html',
   styleUrl: './register.component.css'

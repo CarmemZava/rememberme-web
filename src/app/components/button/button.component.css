@@ -1,0 +1,16 @@
+button {
+    margin: auto;
+    border: none;
+    cursor: pointer;
+}
+
+/* variant auth */
+.button-auth {
+    background-color: var(--primary-color);
+    height: 50px;
+    padding: 0 45px;
+    font-size: 22px;
+    font-weight: 500;
+    line-height: 39px;
+    border-radius: 10px;
+}

@@ -1,24 +1,9 @@
 form {
+    display: flex;
+    flex-direction: column;
+    gap: 24px;
     width: 100%;
-    max-width: 600px;
-    
-}
-
-.register-section {
-    display: grid;
-    place-items: center;
-}
-
-.button-auth {
-    display: block;
-    margin: auto;
-    background-color: var(--primary-color);
-    padding: 10px 50px;
-    font-size: 22px;
-    font-weight: 500;
-    line-height: 39px;
-    border: none;
-    border-radius: 10px;
+    max-width: 550px;
 }
 
 .login-option {
@@ -29,7 +14,7 @@ form {
 .login-or {
     display: block;
     color: var(--text-span);
-    margin: 24px 0px;
+    margin: 20px 0px;
 }
 
 .login-option-text {
