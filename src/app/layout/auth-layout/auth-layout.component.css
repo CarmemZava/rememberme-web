@@ -42,12 +42,12 @@ main>section img {
 }
 
 h1 {
-    font-size: clamp(32px, 4vw, 50px);
-    /* responsiveness */
+    font-size: clamp(32px, 4vw, 50px);/* responsiveness */
     font-weight: 600;
     line-height: 78px;
     color: var(--secondary-color);
     margin-bottom: 25px;
+    text-align: center;
 }
 
 

@@ -6,6 +6,8 @@ button {
 
 /* variant auth */
 .button-auth {
+    display: block;
+    align-self: center;
     background-color: var(--primary-color);
     height: 50px;
     padding: 0 45px;
@@ -14,3 +16,13 @@ button {
     line-height: 39px;
     border-radius: 10px;
 }
+
+/* variant primary */
+/* .button-primary {
+    
+} */
+
+/* variant secondary */
+/* .button-secondary {
+    
+} */

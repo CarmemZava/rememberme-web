@@ -1,5 +1,6 @@
 import { Component, Input } from '@angular/core';
-import { ReactiveFormsModule } from '@angular/forms';
+import { FormGroupDirective, ReactiveFormsModule } from '@angular/forms';
+import { ControlContainer } from '@angular/forms';
 
 // Type declaration 
 type InputType = "text" | "email" | "password"
@@ -9,7 +10,13 @@ type InputType = "text" | "email" | "password"
   standalone: true,
   imports: [ReactiveFormsModule],
   templateUrl: './form-input.component.html',
-  styleUrl: './form-input.component.css'
+  styleUrl: './form-input.component.css',
+  viewProviders: [
+  {
+    provide: ControlContainer,
+    useExisting: FormGroupDirective
+  }
+]
 })
 export class FormInputComponent {
   @Input() type: InputType = "text";

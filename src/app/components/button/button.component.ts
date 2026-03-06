@@ -1,5 +1,5 @@
-import { Component, Input,} from '@angular/core';
 import { NgClass } from '@angular/common';
+import { Component, Input,} from '@angular/core';
 
 @Component({
   selector: 'app-button',
@@ -10,6 +10,16 @@ import { NgClass } from '@angular/common';
 })
 export class ButtonComponent {
 
-  @Input() variant: 'primary' | 'auth' | 'secondary' = 'primary';
+  // @Input() variant: 'primary' | 'auth' | 'secondary' = 'primary';
+
+  @Input() 
+  set variant(value: 'primary' | 'auth' | 'secondary') {
+    console.log('Variant recebido:', value);
+    this._variant = value;
+  }
+  get variant() {
+    return this._variant;
+  }
+  private _variant: 'primary' | 'auth' | 'secondary' = 'primary';
 
 }
