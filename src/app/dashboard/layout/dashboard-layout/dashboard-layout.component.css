@@ -1,0 +1,15 @@
+h2 {
+    font-weight: 600;
+    color: var(--secondary-color);
+}
+
+h5 {
+    color: var(--text-color);
+}
+
+.nav-top{
+ background-color: var(--white-bg);   
+}
+
+
+    
