@@ -1,6 +1,7 @@
 :root {
     --primary-color: #4DE894;
     --secondary-color: #3C3E67;
+    --tertiary-color:#E1FDFF;
     --text-color: #7C838A;
     --white-bg: #FCFEFF;
     --blue-bg: #E6F3FF;
@@ -8,4 +9,7 @@
     --text-input:#1F2933;
     --text-span:#B0BAC3;
     --text-login:#61FFC5;
+   
+
+
 }

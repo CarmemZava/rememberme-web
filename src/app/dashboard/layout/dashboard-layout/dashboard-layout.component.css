@@ -7,9 +7,25 @@ h5 {
     color: var(--text-color);
 }
 
-.nav-top{
- background-color: var(--white-bg);   
+.nav-top {
+    background-color: var(--white-bg);
 }
 
+.nav-item {
+    font-size: 20px;
+    color: var(--text-color);
+}
 
+.nav-item-active {
+    color: white;
+    background: linear-gradient(135deg, var(--primary-color) 50%, var(--tertiary-color) 100%);
+}
+
+/* .nav-item:hover {
     
+} */
+
+.nav-logout{
+    font-size: 18px;
+    color: var(--text-color);
+}
