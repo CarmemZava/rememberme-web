@@ -10,16 +10,8 @@ import { Component, Input,} from '@angular/core';
 })
 export class ButtonComponent {
 
-  // @Input() variant: 'primary' | 'auth' | 'secondary' = 'primary';
+  @Input() variant: 'primary' | 'auth' | 'secondary' = 'primary';
+  @Input() type: string = 'submit';
 
-  @Input() 
-  set variant(value: 'primary' | 'auth' | 'secondary') {
-    console.log('Variant recebido:', value);
-    this._variant = value;
-  }
-  get variant() {
-    return this._variant;
-  }
-  private _variant: 'primary' | 'auth' | 'secondary' = 'primary';
 
 }

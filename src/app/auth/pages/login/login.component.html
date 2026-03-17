@@ -1,11 +1,11 @@
 <app-auth-layout>
-    <form [formGroup]="loginForms">
+    <form [formGroup]="loginForms"
+    (ngSubmit)="login()"
+    >
         <app-form-input formName="email" type="email" label="Email" placeholder="Enter your Email here">
         </app-form-input>
         <app-form-input formName="password" type="password" label="Password"
             placeholder="Enter your Password here"></app-form-input>
-        <app-button variant="auth">Login</app-button>
+        <app-button variant="auth" type="submit">Login</app-button>
     </form>
-
-
 </app-auth-layout>

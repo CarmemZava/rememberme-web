@@ -1,17 +1,19 @@
 <app-auth-layout>
-    <form [formGroup]="registerForm">
+    <form [formGroup]="registerForm"
+    (ngSubmit)="register()"
+    >
         <app-form-input formName="name" type="text" label="Full Name"
             placeholder="Enter your Full Name here"></app-form-input>
         <app-form-input formName="email" type="email" label="Email"
             placeholder="Enter your Email here"></app-form-input>
         <app-form-input formName="password" type="password" label="Password"
             placeholder="Enter your Password here"></app-form-input>
-         <app-button [variant]="'auth'">Create Account</app-button>
+         <app-button [variant]="'auth'" type="submit">Create Account</app-button>
     </form>
     <div class="login-option">
         <span class="login-or">- OR -</span>
         <p class="login-option-text">Already have and account?
-            <a class="login-option-here" href="">Log in</a>
+            <a routerLink="/login" class="login-option-here">Log in</a>
         </p>
     </div>
 </app-auth-layout>
