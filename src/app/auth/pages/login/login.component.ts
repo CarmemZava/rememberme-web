@@ -4,6 +4,9 @@ import { FormControl, FormGroup, ReactiveFormsModule, Validators } from '@angula
 import { FormInputComponent } from '../../components/form-input/form-input.component';
 import { ButtonComponent } from '../../components/button/button.component';
 import { AuthService } from '../../../core/services/auth.service';
+import { ToastrService } from 'ngx-toastr';
+import { Router } from '@angular/router';
+import { DashboardLayoutComponent } from '../../../dashboard/layout/dashboard-layout/dashboard-layout.component';
 
 @Component({
   selector: 'app-login',
@@ -11,7 +14,7 @@ import { AuthService } from '../../../core/services/auth.service';
   imports: [AuthLayoutComponent,
     ReactiveFormsModule,
     FormInputComponent,
-    ButtonComponent
+    ButtonComponent,
   ],
   templateUrl: './login.component.html',
   styleUrl: './login.component.css'
@@ -19,7 +22,11 @@ import { AuthService } from '../../../core/services/auth.service';
 export class LoginComponent {
   loginForms!: FormGroup;
 
-  constructor(private authService: AuthService) {
+  constructor(
+    private authService: AuthService,
+    private toastrService: ToastrService,
+    private router: Router
+  ) {
     this.loginForms = new FormGroup({
       email: new FormControl("", [Validators.required, Validators.email]),
       password: new FormControl("", [Validators.required, Validators.minLength(6)])
@@ -32,10 +39,15 @@ export class LoginComponent {
 
     this.authService.login(data).subscribe({
       next: (response) => {
-        console.log("Sucessfull Login", response)
+        console.log("Sucessfull Login", response);
+        this.toastrService.success("Login completed successfully!");
+        // this.router.navigate['/dashboard']; verificar qual a rota correta 
       },
-      error: (err) => {
-        console.log('Error', err)
+      error: (error) => {
+        console.error('Error', error);
+        const message = error.error?.message || "Error logging in, please try again!";
+        this.toastrService.error(message);
+
       }
     })
   }

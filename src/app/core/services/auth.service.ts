@@ -19,17 +19,7 @@ export class AuthService {
       `${environment.apiUrl}/auth/login`, loginRequest)
   }
 
-  //   login(loginRequest: LoginRequest): Observable<LoginResponse> {
-  //   return this.httpClient.post<LoginResponse>(
-  //     `${environment.apiUrl}/auth/login`, loginRequest).pipe(
-  //       tap((response) => {
-  //         localStorage.setItem('token', response.token),
-  //         localStorage.setItem('name', response.name)
-  //       })
-  //     )
-  // }
-
-  register(registerRequest: RegisterRequest) {
+  register(registerRequest: RegisterRequest): Observable<RegisterResponse> {
     return this.httpClient.post<RegisterResponse>(
       `${environment.apiUrl}/auth/register`, registerRequest
     )
