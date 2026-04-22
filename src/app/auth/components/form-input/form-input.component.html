@@ -1,7 +1,31 @@
 <div class="input-wrapper">
     <label [for]="formName"> {{label}} </label>
-    <input 
-    [type]="type"
-    [formControlName]="formName"
-    [placeholder]="placeholder" />
+    <input [type]="type" [formControlName]="formName" [placeholder]="placeholder" [class.invalid]="control?.touched && control?.invalid" />
+
+    <!-- Div to control input errors filled by user -->
+    <div class="error-message" *ngIf="control?.touched && control?.invalid">
+        <!-- Input required -->
+        <small *ngIf="control?.errors?.['required']">
+            {{label}} is required
+        </small>
+
+        <!-- Name must have at least 2 characteres -->
+        <small *ngIf=" formName === 'name' && control?.errors?.['minlength']">
+            Name must have at least {{control?.errors?.['minlength'].requiredLength}} characteres
+        </small>
+
+        <!-- Invalid email -->
+        <small *ngIf="formName === 'email' && control?.errors?.['email']">
+            Invalid email format
+        </small>
+
+        <!-- Password must have at least 6 characteres -->
+        <small *ngIf="formName==='password' && control?.errors?.['minlength']">
+            Password must have at least {{control?.errors?.['minlength'].requiredLength}} characteres
+
+        </small>
+    </div>
+
+
+
 </div>

@@ -17,42 +17,43 @@ import { ToastrService } from 'ngx-toastr';
     ButtonComponent,
     RouterLink,
 
-],
+  ],
   templateUrl: './register.component.html',
   styleUrl: './register.component.css'
 })
 export class RegisterComponent {
   registerForm!: FormGroup;
 
-//   ngOnInit() {
-//   this.toastrService.success('Teste Toast');
-// }
+  //   ngOnInit() {
+  //   this.toastrService.success('Teste Toast');
+  // }
 
   constructor(
     private authService: AuthService,
     private toastrService: ToastrService
   ) {
     this.registerForm = new FormGroup({
-      name: new FormControl("",Validators.required),
-      email: new FormControl("",[ Validators.required, Validators.email]),
-      password: new FormControl("",[ Validators.required, Validators.minLength(6)])
+      name: new FormControl("", [Validators.required, Validators.minLength(2)]),
+      email: new FormControl("", [Validators.required, Validators.email]),
+      password: new FormControl("", [Validators.required, Validators.minLength(6)])
     })
   }
 
-  register(){
-    if (this.registerForm.invalid) return 
+  register() {
+    if (this.registerForm.invalid) {
+      this.registerForm.markAllAsTouched();
+      return;
+    }
+    
     const data = this.registerForm.value
 
     this.authService.register(data).subscribe({
       next: (response) => {
-        console.log("Sucessfull register",response)
+        console.log("Sucessfull register", response)
         this.toastrService.success("Registration completed successfully!")
       },
       error: (error) => {
-        console.error("Error", error)
-        const message = error.error?.message || "Error registering, please try again!";
-        // The message loads the error message from the backend, if there is one; otherwise, it uses a fallback.
-        this.toastrService.error(message);
+        this.toastrService.error("Error registering, please try again!");
       }
     })
   }
